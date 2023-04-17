@@ -1,30 +1,58 @@
+<!DOCTYPE html>
 <html>
-    <head>
-        <link rel="stylesheet" href="css/style.css" />
-    </head>
-    <body>
-        <section id='start-block' class="hide">
-            <p>Instructions...</p>
-            <button id="start-button">Start Quiz</button>
-        </section>
-        <section id="quiz-block" class="hide">
-            <h1>Question text</h1>
-            <div class="answers">
-                <p>Answer 1</p>
-                <p>Answer 2</p>
-            </div>
-        </section>
-        <section id="score-block" class="hide">
-            <p>Scores...</p>
-        </section>
-        <script src="js/script.js"></script>
-    </body>
-
-
-
-
-
-
-
-
+<head>
+	<title>JavaScript Quiz!</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<header>
+		<h1>Fundamentals of JavaScript Quiz</h1>
+		<h3 id="timer"></h3>
+	</header>
+	<main>
+		<div id="button">
+			<button class= "btn" id="start-button">Start Quiz</button>
+		</div>
+		<form id="quiz-form" class="hidden" onsubmit="handleQuizFormSubmission()">
+			<h2>Question 1:</h2>
+			<p>What does the "var" element stand for in JavaScript?</p>
+			<label><input type="radio" name="q1" value="a">a. variable</label>
+			<label><input type="radio" name="q1" value="b">b. varsity</label>
+			<label><input type="radio" name="q1" value="c">c. various</label>
+			<h2>Question 2:</h2>
+			<p>Which of the following elements loops in JavaScript?</p>
+			<label><input type="radio" name="q2" value="a">a. for</label>
+			<label><input type="radio" name="q2" value="b">b. let</label>
+			<label><input type="radio" name="q2" value="c">c. function</label>
+			<p>How do you make an HTML element into a JavaScript variable?</p>
+			<label><input type="radio" name="q3" value="a">a. document.querySelector</label>
+			<label><input type="radio" name="q3" value="b">b. doc.query</label>
+			<label><input type="radio" name="q3" value="c">c. querySelector.HTML</label>
+			<p>What is the correct way to add JS into an HTML doc.</p>
+			<label><input type="radio" name="q4" value="a">a. ./style.css/style.js</label>
+			<label><input type="radio" name="q4" value="b">b. /style.JavaScript.HTML</label>
+			<label><input type="radio" name="q4" value="c">c. style.JS</label>
+			<label><input type="radio" name="q4" value="c">c. script.JS</label>
+			<input type="submit" value="Submit">
+		</form>
+		<div id="quiz-results" class="hidden">
+			<h2>Quiz Results</h2>
+			<p>You scored <span id="score"></span> out of <span id="total-questions"></span> questions.</p>
+			<p>Your time: <span id="time"></span> seconds</p>
+			<h2>High Scores</h2>
+			<table> <!--Could not get the table to work in JavaScript so added it in HTML-->
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Score</th>
+						<th>Time</th>
+					</tr>
+				</thead>
+				<tbody id="high-scores">
+				</tbody>
+			</table>
+		</div>
+	</main>
+	<script src="script.js"></script>
+</body>
 </html>
